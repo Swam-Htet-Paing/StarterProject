@@ -9,6 +9,14 @@
             "command": "cmd",
             "args": ["/c", "echo Husky.Net is awesome!" ]
          }
+      },
+      {
+         "name": "secret-scan",
+         "group": "pre-commit",
+         "command": "dotnet",
+         "args": [ "husky", "exec", ".husky/csx/secret-scan.csx", "--args", "${staged}" ],
+         "include": [ "**/*" ],
+         "output": "always"
       }
    ]
 }
