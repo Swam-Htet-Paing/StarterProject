@@ -21,6 +21,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\DevOpsLab.Application\DevOpsLab.Application.csproj" />
-    <ProjectReference Include="..\..\src\DevOpsLab.Domain\DevOpsLab.Domain.csproj" />
+    <ProjectReference Include="..\..\src\devOpsLab.domain\DevOpsLab.Domain.csproj" />
   </ItemGroup>
 </Project>
