@@ -26,8 +26,8 @@ public sealed class ProductService
             throw new NotFoundException("Category", request.CategoryId);
 
         var normalizedSku = (request.Sku ?? string.Empty).Trim().ToUpperInvariant();
-        // if (await _products.GetBySkuAsync(normalizedSku, cancellationToken) is not null)
-        //     throw new BusinessRuleViolationException("product.sku.duplicate", $"SKU '{normalizedSku}' already exists.");
+        if (await _products.GetBySkuAsync(normalizedSku, cancellationToken) is not null)
+            throw new BusinessRuleViolationException("product.sku.duplicate", $"SKU '{normalizedSku}' already exists.");
 
         var product = Product.Create(request.CategoryId, normalizedSku, request.Name, request.Price, request.StockQuantity);
 
