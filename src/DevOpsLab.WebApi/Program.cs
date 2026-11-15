@@ -42,7 +42,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapApplicationHealthChecks();
-app.MapProductEndpoints();
+app.MapProductEndpoints();app.MapDebugEndpoints();
 
 app.MapGet("/", () => Results.Ok(new
 {
