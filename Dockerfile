@@ -39,5 +39,5 @@ COPY --from=build /app/publish .
 # The chiseled image already defaults to `app` (UID 1654). Say it anyway, so the
 # intent survives a change of base image.
 USER app
-
+USER root
 ENTRYPOINT ["dotnet", "DevOpsLab.WebApi.dll"]
